@@ -1,0 +1,32 @@
+{% extends 'blogApp/index.html' %}
+{% load static %}
+
+{% block contentChangeCore %}
+    <h2>Páginas</h2>
+
+    <div id="data" class="container col-6">
+        <table class="table table-bordered col-12 text-center">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Usario</th>
+                    <th>Título</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for page in pages %}
+                <tr>
+                    <td>{{ page.user }}</td>
+                    <td>{{ page.title }}</td>
+                    <td>
+                        <a href="editar/{{ page.id }}" class="btn btn-success">Editar</a>
+                        <a href="ver/{{ page.id }}" class="btn btn-info">Ver</a>
+                        <a href="eliminar/{{ page.id }}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock contentChangeCore %}
+    
