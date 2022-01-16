@@ -1,0 +1,33 @@
+{% extends 'blogApp/index.html' %}
+{% load static %}
+
+{% block contentChangeCore %}
+    <h2>Búsqueda de artículos:</h2>
+    <p>Los artículos del usuario <em>{{ user }}</em> son:</p>
+
+    
+    {% if articles %}
+        <div id="data" class="container col-6">
+            <table class="table table-bordered col-12 text-center">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>Usario</th>
+                        <th>Título</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for article in articles %}
+                    <tr>
+                        <td>{{ article.user }}</td>
+                        <td>{{ article.title }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p style="text-align: center; font-weight: bold; font-size: 2rem;">No se encontraron artículos del usuario <em>{{ user }}</em></p>
+    {% endif %}
+        
+    
+{% endblock contentChangeCore %}

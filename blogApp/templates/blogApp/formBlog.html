@@ -3,15 +3,18 @@
 
 {% block contentChangeCore %}
     <h2>Formulario</h2>
+
+    {% if formualrio.errors %}
+    <p style="text-align: center; font-weight: bold; font-size: 2rem;">No se encontraron artículos del usuario <em>{{ user }}</em></p>
+    {% endif %}
     <div class="wrapper-form">
         <form action="/blogApp/form/" method="POST" class="form-blog">{% csrf_token %}
-            <p class="form-text">Usuario: <input type="text" name="user"></p>
-            <p class="form-text">Título: <input type="text" name="title"></p>
+            <p class="form-text">Usuario: <input type="text" name="user" required></p>
+            <p class="form-text">Título: <input type="text" name="title" required></p>
             <p class="form-text">Artículo: <textarea name="text_article" rows="4" cols="50"></textarea></p>
             <p class="form-text">Topic: <input type="text" name="topic"></p>
-            <p class="form-text">Fecha: <input type="date" name="date_creation"></p>
     
-            <input type="submit" value="Registrar">
+            <input type="submit" class="btn btn-dark" value="Registrar">
         </form>
     </div>
 {% endblock contentChangeCore %}

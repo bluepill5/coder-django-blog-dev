@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Inicio</title>
+        <title>Blog Django</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -23,11 +23,11 @@
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'about' %}">Nosotros</a>
-                <a class="navbar-brand" href="{% url 'pages' %}">Páginas</a>
+                <a class="navbar-brand" href="{% url 'pages' %}">Artículos</a>
                 <a class="navbar-brand" href="{% url 'formBlog' %}">Administración</a>
                 <a class="navbar-brand" href="{% url 'search' %}">Buscar</a>
                 <a class="navbar-brand" href="{% url 'login' %}">Ingresar</a>
-                <a class="btn btn-primary" href="{% url 'signup' %}">Registrarse</a>
+                <a class="btn btn-dark" href="{% url 'signup' %}">Registrarse</a>
             </div>
         </nav>
 
@@ -37,7 +37,7 @@
         </main>
         
         <!-- Footer-->
-        <footer class="footer bg-light">
+        <footer class="footer bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">

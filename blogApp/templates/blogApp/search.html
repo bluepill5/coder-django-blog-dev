@@ -3,5 +3,12 @@
 
 {% block contentChangeCore %}
     <h2>Buscar</h2>
+    <div class="wrapper-form">
+        <form action="/blogApp/search_action/" method="GET" class="form-blog">{% csrf_token %}
+            <p class="form-text">Usuario: <input type="text" name="user" required></p>
+
+            <input type="submit" class="btn btn-dark" value="Buscar">
+        </form>
+    </div>
 {% endblock contentChangeCore %}
     

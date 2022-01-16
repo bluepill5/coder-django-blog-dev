@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import *
 
 # Models
 class Blog(models.Model):
@@ -22,7 +23,7 @@ class Article(models.Model):
     title = models.CharField('title', max_length=50)
     text_article = models.CharField('text_article', max_length=1000)
     topic = models.CharField('topic', max_length=50)
-    date_creation = models.DateField('date_creation', auto_now=False, auto_now_add=False)
+    date_creation = models.DateField('date_creation', auto_now=False, auto_now_add=False, default=datetime.now)
 
     def __str__(self):
         return f'{self.title}: {self.topic}'

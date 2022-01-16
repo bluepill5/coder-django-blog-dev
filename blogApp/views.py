@@ -25,8 +25,7 @@ def formBlog(request):
         # Guardamos el artículo
         article = Article(title=request.POST['title'], 
                            text_article=request.POST['text_article'], 
-                           topic=request.POST['topic'], 
-                           date_creation=request.POST['date_creation'])
+                           topic=request.POST['topic'])
         article.save()
 
         return render(request, './blogApp/home.html')
@@ -34,6 +33,16 @@ def formBlog(request):
 
 def search(request):
     return render(request, './blogApp/search.html')
+
+def search_action(request):
+    if request.method == 'GET':
+        user = request.GET['user']
+        articles = Blog.objects.filter(user=user)
+
+        return render(request, './blogApp/articlesFinded.html', {'user': user, 'articles': articles})
+    else:
+        response = 'No enviaste datos'
+        return HttpResponse(response)
 
 def login(request):
     return render(request, './blogApp/login.html')
